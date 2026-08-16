@@ -31,11 +31,9 @@ const AdminDashboard = () => {
     }
   };
 
-  useEffect(() => {
-    fetchData();
-  }, [filter]);
-
-  return (
+useEffect(() => {
+  fetchData();
+}, [fetchData]);  return (
     <div className="dashboard-layout">
       <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
       

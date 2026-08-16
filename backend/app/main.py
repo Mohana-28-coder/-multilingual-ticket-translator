@@ -31,7 +31,9 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "http://127.0.0.1:3000"
+        "http://127.0.0.1:3000",
+        "https://profound-raindrop-b65e86.netlify.app",
+        "https://agent-6a81907996b7486e--profound-raindrop-b65e86.netlify.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
