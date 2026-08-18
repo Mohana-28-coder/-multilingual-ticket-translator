@@ -73,3 +73,76 @@ French, German, Spanish, Arabic, Chinese, Japanese, Korean, Portuguese, Russian,
 ---
 
 ## 🔄 System Workflow
+
+---
+
+## 📋 API Endpoints
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| POST | /api/auth/register | — | Register new user |
+| POST | /api/auth/login | — | Login, returns JWT |
+| GET | /api/auth/me | User | Get current user info |
+| POST | /api/tickets/ | Client | Submit new ticket |
+| GET | /api/tickets/ | User | Get tickets |
+| GET | /api/tickets/{id} | User | Get ticket by ID |
+| PUT | /api/tickets/{id}/status | Admin | Update ticket status |
+| GET | /api/admin/kpi | Admin | Get KPI statistics |
+| GET | /api/admin/tickets | Admin | Get all tickets |
+| GET | /api/admin/tickets/{id}/suggestion | Admin | Get AI suggestion |
+| POST | /api/admin/tickets/{id}/respond | Admin | Send response |
+| POST | /api/translation/detect | User | Detect language |
+| POST | /api/translation/translate | User | Translate text |
+| GET | /api/translation/languages | User | Get supported languages |
+
+---
+
+## 💻 Local Setup
+
+### Backend
+```bash
+cd backend
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 5000
+```
+
+### Frontend
+```bash
+cd frontend
+npm install
+npm start
+```
+
+---
+
+## 🔐 Security Features
+
+- JWT authentication with 24-hour token expiry
+- PBKDF2-SHA256 password hashing (bcrypt)
+- Role-based access control (client / admin)
+- CORS configured for specific origins
+- File type and size validation
+- SQL injection prevention via SQLAlchemy ORM
+
+---
+
+## ⚠️ Known Limitations
+
+- Render free tier sleeps after 15 min inactivity — open backend URL first
+- PostgreSQL free tier expires after 90 days
+- Gemini free tier — 15 requests/minute
+- Image files (.png, .jpg) — text extraction requires OCR (not implemented)
+
+---
+
+## 👥 Team Members
+
+See Team members details folder for more information.
+
+---
+
+## 📄 License
+
+MIT License
